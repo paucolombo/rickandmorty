@@ -37,7 +37,7 @@
   width: 400px;
   height: 400px;
   animation: girar 1s linear;
-  background-image: url(..\public\portal.png);
+  background-image: url(\portal.png);
 }
 button:hover,
 button:focus {
