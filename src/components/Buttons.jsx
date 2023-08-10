@@ -1,15 +1,16 @@
 import React from 'react'
+import Characterlist from './Characterlist';
 
 const Buttons = () => {
-
-  // const showCharacters = async () => {
-  //   const data = await fetch('https://rickandmortyapi.com/api/character').then((res) => res.json());
-  //   return data
-  // }
+  const [visible, setVisible] = React.useState(true);
+  const showCharacters = () => {
+    setVisible(false);
+  }
 
   return (
-    <div className='buttonsContainer'>
-      <button>Show Characters</button>
+    <>
+      {visible && <div className='buttonsContainer'><button onClick={showCharacters}>Show Characters</button>  </div >}
+      {!visible && <Characterlist />}
       {/* <ul>
         <li><label>
           <input type="checkbox" name="Alien" id="Alien" value="Alien"></input>
@@ -19,9 +20,8 @@ const Buttons = () => {
           Human</label></li>
       </ul>
       <button>Filter</button> */}
-    </div >
+    </>
   )
 
 }
-
 export default Buttons
